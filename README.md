@@ -15,7 +15,8 @@ Add the SDK & APK file to Your Project
 ADD Permission
 - Add lines of codes below into the AndroidManifest.xml file of your project 
 
-
+  "ddd"
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  
