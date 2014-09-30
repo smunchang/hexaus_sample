@@ -13,11 +13,9 @@ Add the SDK & APK file to Your Project
 - Copy the APK(hexaus-wallet.apk) assets directory into your project's libs directory.
 
 ADD Permission
-- The SDK require several android permissions so you need to add lines of codes below into the AndroidManifest.xml file of your project 
-
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+- Add lines of codes below into the AndroidManifest.xml file of your project 
 
 
-<h2>afafafa</h2>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
