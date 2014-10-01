@@ -35,7 +35,7 @@ import com.hexaus.sdk.Hexaus;
 It is optional, but we recommend to implement this when MainActivity start (in the onCreate method) because it collect user's information. By this information we will analyze and make a report for you.
 ```
 ex)
-application number -> sampleapp001
+application code -> sampleapp001
 ```
 ```
 @Override
@@ -64,8 +64,8 @@ If a user has enough balance to purchase item, "purchase dialog" will be shown. 
 
 ```
 ex)
-application number -> sampleapp001
-item number -> item-000-001
+application code -> sampleapp001
+item code -> item-000-001
 item name -> Excellent Weapon
 amount -> 50000
 ```
