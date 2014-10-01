@@ -32,7 +32,7 @@ import com.hexaus.sdk.Hexaus;
 ```
 
 ## Initializing
-you are recommended to implement this sample when MainActivity start (in the onCreate method).
+It is optional, but we recommend to implement this when MainActivity start (in the onCreate method) because it collect user's information. By this information we will analyze and make a report for you.
 ```
 ex)
 application number -> sampleapp001
@@ -106,7 +106,7 @@ public void purchaseItem(View v) {
 ```
 
 ## Send Message to Friend
-
+It is optional too, but it helps promote your application using our messaginr server.
 ```
 ex)
 application number -> sampleapp001
@@ -144,7 +144,7 @@ message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 ```
 
 ## Send SMS 
-
+It is optional too, but it helps promote your application by sending SMS to to non-hexaus user.
 ```
 ex)
 application number -> sampleapp001
