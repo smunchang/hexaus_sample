@@ -28,20 +28,73 @@ import com.hexaus.sdk.Hexaus;
 
 ## Initializing
 you are recommended to implement this sample when MainActivity start (in the onCreate method).
-
-`ex) application number -> sampleapp001`
 ```
-Hexaus hexaus = new Hexaus(getApplicationContext());
-
-if(hexaus.checkInstall()){
-  ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.InitActivity");
-  Intent intent = new Intent(Intent.ACTION_MAIN);
-  intent.addCategory(Intent.CATEGORY_LAUNCHER);
-  intent.setComponent(compName);
+application number -> sampleapp001
+```
+```
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
 	
-  intent.putExtra("app_no", "sampleapp001"); 
-  startActivity(intent);
-}else{
-  hexaus.installHexaus();
+	Hexaus hexaus = new Hexaus(getApplicationContext());
+
+	if(hexaus.checkInstall()){
+		ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.InitActivity");
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_LAUNCHER);
+		intent.setComponent(compName);
+		
+		intent.putExtra("app_no", "sampleapp001");
+		startActivity(intent);
+	}else{
+		hexaus.installHexaus();
+	}
 }
+```
+
+## Purchasing
+
+```
+application number -> sampleapp001
+item number -> item-000-001
+item name -> Excellent Weapon
+amount -> 50000
+```
+```
+public void purchaseItem(View v) {
+
+	Hexaus hexaus = new Hexaus(getApplicationContext());
+
+	if(hexaus.checkInstall()){
+		ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.PurchaseActivity");
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_LAUNCHER);
+		intent.setComponent(compName);
+		
+		intent.putExtra("app_no", "sampleapp001");
+		intent.putExtra("item_no", "item-000-001");
+		intent.putExtra("item_nm", "Excellent Weapon");
+		intent.putExtra("amount", "50000");
+		startActivityForResult(intent, 0);
+	}else{
+		hexaus.installHexaus();
+	}
+	//
+
+}
+```
+```
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+
+		if(resultCode == Activity.RESULT_OK){
+			if(data.getStringExtra("activity").equals("purchase")){
+				Toast.makeText(this,"Purchase OK",Toast.LENGTH_LONG).show();
+			}
+		}
+
+	}
 ```
