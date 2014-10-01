@@ -1,3 +1,7 @@
+This document shows how to integrate HEXAUS API. <br>
+HEXAUS API provide three kinds of USE CASE which are purchasing iten, sending message to friends & sending SMS message.<br>
+Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interact within your application.
+
 ## Pre-requites
 You need to register as a developer on the HEXAUS developer page, then you will get get developer code and application code.
 
