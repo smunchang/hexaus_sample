@@ -20,3 +20,28 @@ Before you start, you need to follow these steps below.
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
+
+## Import Class
+```
+import com.hexaus.sdk.Hexaus;
+```
+
+## Initializing
+you are recommended to implement this sample when MainActivity start (in the onCreate method).
+
+`ex) application number -> sampleapp001`
+```
+Hexaus hexaus = new Hexaus(getApplicationContext());
+
+if(hexaus.checkInstall()){
+  ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.InitActivity");
+  Intent intent = new Intent(Intent.ACTION_MAIN);
+  intent.addCategory(Intent.CATEGORY_LAUNCHER);
+  intent.setComponent(compName);
+	
+  intent.putExtra("app_no", "sampleapp001"); 
+  startActivity(intent);
+}else{
+  hexaus.installHexaus();
+}
+```
