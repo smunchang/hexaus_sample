@@ -29,6 +29,7 @@ import com.hexaus.sdk.Hexaus;
 ## Initializing
 you are recommended to implement this sample when MainActivity start (in the onCreate method).
 ```
+ex)
 application number -> sampleapp001
 ```
 ```
@@ -57,6 +58,7 @@ protected void onCreate(Bundle savedInstanceState) {
 If user have enough balance to purchase item, "purchase dialog" will be shown. Or if not sufficient balance, "topup dialog" will be shown.
 
 ```
+ex)
 application number -> sampleapp001
 item number -> item-000-001
 item name -> Excellent Weapon
@@ -102,32 +104,27 @@ public void purchaseItem(View v) {
 
 ```
 application number -> sampleapp001
-item number -> item-000-001
-item name -> Excellent Weapon
-amount -> 50000
+message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 ```
 ```
-public void purchaseItem(View v) {
+	public void sendMessage(View v) {
 
-	Hexaus hexaus = new Hexaus(getApplicationContext());
+		Hexaus hexaus = new Hexaus(getApplicationContext());
 
-	if(hexaus.checkInstall()){
-		ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.PurchaseActivity");
-		Intent intent = new Intent(Intent.ACTION_MAIN);
-		intent.addCategory(Intent.CATEGORY_LAUNCHER);
-		intent.setComponent(compName);
-		
-		intent.putExtra("app_no", "sampleapp001");
-		intent.putExtra("item_no", "item-000-001");
-		intent.putExtra("item_nm", "Excellent Weapon");
-		intent.putExtra("amount", "50000");
-		startActivityForResult(intent, 0);
-	}else{
-		hexaus.installHexaus();
+		if(hexaus.checkInstall()){
+			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.FriendsActivity");
+			Intent intent = new Intent(Intent.ACTION_MAIN);
+			intent.addCategory(Intent.CATEGORY_LAUNCHER);
+			intent.setComponent(compName);
+			
+			intent.putExtra("app_no", "sampleapp001");
+			intent.putExtra("message", "This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!");
+			startActivityForResult(intent, 0);
+		}else{
+			hexaus.installHexaus();
+		}
+
 	}
-	//
-
-}
 ```
 ```
 	@Override
