@@ -60,7 +60,7 @@ protected void onCreate(Bundle savedInstanceState) {
 ```
 
 ## Purchase Item
-If user have enough balance to purchase item, "purchase dialog" will be shown. Or if balance is insufficent, "topup dialog" will be shown.
+If a user has enough balance to purchase item, "purchase dialog" will be shown. Or if balance is insufficent, "topup dialog" will be shown.
 
 ```
 ex)
