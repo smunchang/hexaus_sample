@@ -18,7 +18,7 @@ Whenever you build your application, please include the newest our SDK and APK.
 ```
 
 #####ADD Permission
-Add lines of codes below into the AndroidManifest.xml file of your project 
+Add lines of codes below into the <b>AndroidManifest.xml</b> file of your project 
 
 ```
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
