@@ -7,11 +7,11 @@ You need to register as a developer on the HEXAUS developer page, then you will 
 Hexaus API provides one SDK which is Java Library and one APK which includes HEXAUS Application.
 Before you start, you need to follow these steps below.
 
-####Add the SDK & APK file to Your Project
+#####Add the SDK & APK file to Your Project
 - Copy the SDK(hexaus-sdk.jar) libs directory into your project's libs directory.
 - Copy the APK(hexaus-wallet.apk) assets directory into your project's libs directory.
 
-####ADD Permission
+#####ADD Permission
 - Add lines of codes below into the AndroidManifest.xml file of your project 
 
 ```
@@ -20,7 +20,7 @@ Before you start, you need to follow these steps below.
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 
-## Import Class
+####Import Class
 ```
 import com.hexaus.sdk.Hexaus;
 ```
