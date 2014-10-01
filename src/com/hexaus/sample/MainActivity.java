@@ -52,7 +52,6 @@ public class MainActivity extends ActionBarActivity {
 		}else{
 			hexaus.installHexaus();
 		}
-		//
 
 	}
 	
@@ -72,13 +71,11 @@ public class MainActivity extends ActionBarActivity {
 		}else{
 			hexaus.installHexaus();
 		}
-		//
 
 	}
 	
 	public void sendSMS(View v) {
 
-		//hexaus.test();
 		Hexaus hexaus = new Hexaus(getApplicationContext());
 
 		if(hexaus.checkInstall()){
@@ -93,8 +90,6 @@ public class MainActivity extends ActionBarActivity {
 		}else{
 			hexaus.installHexaus();
 		}
-		//
-
 	}
 	
 
