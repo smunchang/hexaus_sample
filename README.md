@@ -11,7 +11,7 @@ Before you start, you need to follow these steps below.
 
 #####Add the SDK & APK file to Your Project
 - Copy the SDK(hexaus-sdk.jar) to <b>/libs</b> directory in your project.
-- Copy the APK(hexaus-wallet.apk) to <b>/assets<b> directory in your project.
+- Copy the APK(hexaus-wallet.apk) to <b>/assets</b> directory in your project.
 ```
 NOTE
 Whenever you build your application, please include the newest our SDK and APK.
