@@ -1,4 +1,4 @@
-HEXAUS API provides three kinds of USE CASE which are purchasing item, sending message to friends & sending SMS message in your applicaton. Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interact within your application.
+HEXAUS API provides four kinds of Activitiy which are initializing, purchasing item, sending message to friends and sending SMS message in your applicaton. Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interact within your application.
 
 ## Pre-requites
 You need to register as a developer on the HEXAUS developer page, then you will get developer code and application code.
