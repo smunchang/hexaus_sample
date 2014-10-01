@@ -1,9 +1,7 @@
-This document shows how to integrate HEXAUS API. <br>
-HEXAUS API provide three kinds of USE CASE which are purchasing iten, sending message to friends & sending SMS message.<br>
-Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interact within your application.
+HEXAUS API provides three kinds of USE CASE which are purchasing item, sending message to friends & sending SMS message in your applicaton. Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interact within your application.
 
 ## Pre-requites
-You need to register as a developer on the HEXAUS developer page, then you will get get developer code and application code.
+You need to register as a developer on the HEXAUS developer page, then you will get developer code and application code.
 
 
 
@@ -141,6 +139,44 @@ message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 		
 		if(data.getStringExtra("activity").equals("friends")){
 			Toast.makeText(this,"Friends OK",Toast.LENGTH_LONG).show();
+		}
+	}
+```
+
+## Send SMS 
+
+```
+ex)
+application number -> sampleapp001
+message -> This is a really nice game
+```
+```
+	public void sendSMS(View v) {
+
+		Hexaus hexaus = new Hexaus(getApplicationContext());
+
+		if(hexaus.checkInstall()){
+			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.ContactsActivity");
+			Intent intent = new Intent(Intent.ACTION_MAIN);
+			intent.addCategory(Intent.CATEGORY_LAUNCHER);
+			intent.setComponent(compName);
+			
+			intent.putExtra("app_no", "sampleapp001");
+			intent.putExtra("message", "This is a really nice game");
+			startActivityForResult(intent, 0);
+		}else{
+			hexaus.installHexaus();
+		}
+
+	}
+```
+```
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		if(data.getStringExtra("activity").equals("contacts")){
+			Toast.makeText(this,"Contacts OK",Toast.LENGTH_LONG).show();
 		}
 	}
 ```
