@@ -1,6 +1,5 @@
-## Registration
-Before you begin, you need to register your application on the HEXAUS developer page. 
-After registering application, your will get developer code and application code.
+## Pre-requites
+You need to register as a developer on the HEXAUS developer page, then you will get get developer code and application code.
 
 
 
@@ -55,7 +54,7 @@ protected void onCreate(Bundle savedInstanceState) {
 ```
 
 ## Purchase Item
-If user have enough balance to purchase item, "purchase dialog" will be shown. Or if not sufficient balance, "topup dialog" will be shown.
+If user have enough balance to purchase item, "purchase dialog" will be shown. Or if insufficient balance, "topup dialog" will be shown.
 
 ```
 ex)
@@ -103,6 +102,7 @@ public void purchaseItem(View v) {
 ## Send Message to Friend
 
 ```
+ex)
 application number -> sampleapp001
 message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 ```
@@ -131,10 +131,8 @@ message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		
-		if(resultCode == Activity.RESULT_OK){
-			if(data.getStringExtra("activity").equals("purchase")){
-				Toast.makeText(this,"Purchase OK",Toast.LENGTH_LONG).show();
-			}
+		if(data.getStringExtra("activity").equals("friends")){
+			Toast.makeText(this,"Friends OK",Toast.LENGTH_LONG).show();
 		}
 	}
 ```
