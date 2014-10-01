@@ -17,7 +17,7 @@ NOTE
 Whenever you build your application, please include the newest our SDK and APK.
 ```
 
-#####ADD Permission
+#####Add Permission
 Add lines of codes below into the <b>AndroidManifest.xml</b> file of your project 
 
 ```
