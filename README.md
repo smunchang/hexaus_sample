@@ -105,7 +105,7 @@ public void purchaseItem(View v) {
 ```
 
 ## Send Message to Friend
-It is optional too, but it helps promote your application using our messaginr server.
+It is optional too, but it helps promote your application using our messaging server.
 ```
 ex)
 application code -> sampleapp001
