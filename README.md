@@ -14,7 +14,7 @@ Before you start, you need to follow these steps below.
 - Copy the APK(hexaus-wallet.apk) to <b>/assets</b> directory in your project.
 ```
 NOTE
-Whenever you build your application, please include the newest our SDK and APK.
+Whenever you build your application, please include the newest hexaus SDK and APK.
 ```
 
 #####Add Permission
