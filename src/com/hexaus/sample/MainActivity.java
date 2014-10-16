@@ -32,6 +32,8 @@ public class MainActivity extends Activity {
 		}else{
 			hexaus.installHexaus();
 		}
+		
+		
 	}
 	
 	public void purchaseItem(View v) {
