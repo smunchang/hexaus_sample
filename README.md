@@ -1,7 +1,7 @@
 HEXAUS API provides four "use cases" which are <b>initializing, purchasing item, sending message to friend and sending SMS message</b> in your applicaton. Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interacts within your application.
 
 ## Pre-requites
-You need to register as a developer on the HEXAUS developer page, then you will get developer code and application code.
+You need to register as a developer to HEXAUS. pleae conatct to us(hexa@hexaus.com), then you will get developer code and application code.
 
 
 
@@ -81,7 +81,7 @@ public void purchaseItem(View v) {
 		intent.setComponent(compName);
 		
 		intent.putExtra("app_no", "sampleapp001");
-		intent.putExtra("item_no", "item-000-001");
+		intent.putExtra("item_no", "item-000-001");  //unique transaction id is recommended
 		intent.putExtra("item_nm", "Excellent Weapon");
 		intent.putExtra("amount", "50000");
 		startActivityForResult(intent, 0);
@@ -99,6 +99,9 @@ public void purchaseItem(View v) {
 		if(resultCode == Activity.RESULT_OK){
 			if(data.getStringExtra("activity").equals("purchase")){
 				Toast.makeText(this,"Purchase OK",Toast.LENGTH_LONG).show();
+				
+				Log.d("sample", data.getStringExtra("purchase_no"));  //hexaus purchae ID
+				Log.d("sample", data.getStringExtra("item_no"));
 			}
 		}
 	}
