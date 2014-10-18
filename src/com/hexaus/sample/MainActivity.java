@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -68,7 +69,7 @@ public class MainActivity extends Activity {
 			intent.setComponent(compName);
 			
 			intent.putExtra("app_no", "sampleapp001");
-			intent.putExtra("message", "This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!");
+			intent.putExtra("message", "This is a really nice game~~~~~!!!!!\nEnjoy!!!!!!");
 			startActivityForResult(intent, 0);
 		}else{
 			hexaus.installHexaus();
@@ -103,12 +104,16 @@ public class MainActivity extends Activity {
 		if(resultCode == Activity.RESULT_OK){
 			if(data.getStringExtra("activity").equals("purchase")){
 				Toast.makeText(this,"Purchase OK",Toast.LENGTH_LONG).show();
+				
+				Log.d("sample", data.getStringExtra("purchase_no"));
+				Log.d("sample", data.getStringExtra("item_no"));
+				
 			}
 			if(data.getStringExtra("activity").equals("friends")){
-				Toast.makeText(this,"Friends OK",Toast.LENGTH_LONG).show();
+				Toast.makeText(this,"message has been sent to your friend",Toast.LENGTH_LONG).show();
 			}
 			if(data.getStringExtra("activity").equals("contacts")){
-				Toast.makeText(this,"Contact OK",Toast.LENGTH_LONG).show();
+				Toast.makeText(this,"sms message has been sent to your contact",Toast.LENGTH_LONG).show();
 			}
 		}
 
