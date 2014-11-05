@@ -4,7 +4,9 @@ import com.hexaus.sdk.Hexaus;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ComponentName;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +22,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Hexaus hexaus = new Hexaus(getApplicationContext());
+		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
 			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.InitActivity");
@@ -39,7 +41,7 @@ public class MainActivity extends Activity {
 	
 	public void purchaseItem(View v) {
 
-		Hexaus hexaus = new Hexaus(getApplicationContext());
+		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
 			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.PurchaseActivity");
@@ -60,7 +62,7 @@ public class MainActivity extends Activity {
 	
 	public void sendMessage(View v) {
 
-		Hexaus hexaus = new Hexaus(getApplicationContext());
+		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
 			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.FriendsActivity");
@@ -79,7 +81,7 @@ public class MainActivity extends Activity {
 	
 	public void sendSMS(View v) {
 
-		Hexaus hexaus = new Hexaus(getApplicationContext());
+		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
 			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.ContactsActivity");
