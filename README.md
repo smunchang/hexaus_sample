@@ -44,7 +44,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_main);
 	
-	Hexaus hexaus = new Hexaus(getApplicationContext());
+	Hexaus hexaus = new Hexaus(this);
 
 	if(hexaus.checkInstall()){
 		ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.InitActivity");
@@ -73,7 +73,7 @@ amount -> 50000
 ```
 public void purchaseItem(View v) {
 
-	Hexaus hexaus = new Hexaus(getApplicationContext());
+	Hexaus hexaus = new Hexaus(this);
 
 	if(hexaus.checkInstall()){
 		ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.PurchaseActivity");
@@ -118,7 +118,7 @@ message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 ```
 	public void sendMessage(View v) {
 
-		Hexaus hexaus = new Hexaus(getApplicationContext());
+		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
 			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.FriendsActivity");
@@ -156,7 +156,7 @@ message -> This is a really nice game
 ```
 	public void sendSMS(View v) {
 
-		Hexaus hexaus = new Hexaus(getApplicationContext());
+		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
 			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.ContactsActivity");
