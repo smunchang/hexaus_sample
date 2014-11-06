@@ -1,4 +1,4 @@
-HEXAUS API provides four "use cases" which are <b>initializing, purchasing item, sending message to friend and sending SMS message</b> in your applicaton. Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interacts within your application.
+HEXAUS API provides four "use cases" which are <b>initializing, purchasing item, sending message to friend, sending SMS message and showing rank information</b> in your applicaton. Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interacts within your application.
 
 ## Pre-requisite
 You need to register as a developer to HEXAUS.<br>
@@ -147,7 +147,7 @@ message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 ```
 
 ## Send SMS 
-It is optional too, but it helps promote your application by sending SMS to to non-hexaus user.
+It is optional too. User can see game rank information
 ```
 ex)
 application code -> sampleapp001
@@ -181,5 +181,59 @@ message -> This is a really nice game
 		if(data.getStringExtra("activity").equals("contacts")){
 			Toast.makeText(this,"Contacts OK",Toast.LENGTH_LONG).show();
 		}
+	}
+```
+## Send game record 
+It is optional too. By sending game record, Hexaus will show ranking information in game.
+```
+ex)
+application code -> sampleapp001
+unit -> points
+record -> long type value
+
+hexaus.sendRecord("sampleapp001", "points", record);
+
+```
+```
+	private TextView txt_record;
+	public void sendRecord(View v) {
+		txt_record = (TextView) findViewById(R.id.txt_record);
+		
+		long record =  Long.parseLong(txt_record.getText().toString());
+		Hexaus hexaus = new Hexaus(this);
+		
+		if(hexaus.checkInstall()){
+			hexaus.sendRecord("sampleapp001", "points", record);
+			Toast.makeText(this,"the record has been sent.",Toast.LENGTH_LONG).show();
+		}else{
+			hexaus.installHexaus();
+		}
+	}
+```
+
+## Open ranking information.
+It is optional too. If user execute this case, user can see rank information.
+```
+ex)
+application code -> sampleapp001
+
+```
+```
+	public void openRanking(View v) {
+
+		Hexaus hexaus = new Hexaus(this);
+
+		if(hexaus.checkInstall()){
+			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.RankingActivity");
+			Intent intent = new Intent(Intent.ACTION_MAIN);
+			intent.addCategory(Intent.CATEGORY_LAUNCHER);
+			intent.setComponent(compName);
+			
+			intent.putExtra("app_no", "sampleapp001");
+			startActivity(intent);
+		}else{
+			hexaus.installHexaus();
+		}
+
 	}
 ```
