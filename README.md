@@ -147,7 +147,7 @@ message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 ```
 
 ## Send SMS 
-It is optional too. User can see game rank information
+It is optional too, but it helps promote your application by sending SMS to to non-hexaus user.
 ```
 ex)
 application code -> sampleapp001
