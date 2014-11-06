@@ -1,24 +1,22 @@
 package com.hexaus.sample;
 
-import com.hexaus.sdk.Hexaus;
-
-
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ComponentName;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.hexaus.sdk.Hexaus;
 
 public class MainActivity extends Activity {
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
@@ -121,8 +119,37 @@ public class MainActivity extends Activity {
 
 	}
 	
+	private TextView txt_record;
+	public void sendRecord(View v) {
+		txt_record = (TextView) findViewById(R.id.txt_record);
+		
+		long record =  Long.parseLong(txt_record.getText().toString());
+		Hexaus hexaus = new Hexaus(this);
+		
+		if(hexaus.checkInstall()){
+			hexaus.sendRecord("sampleapp001", "points", record);
+			Toast.makeText(this,"the record has been sent.",Toast.LENGTH_LONG).show();
+		}else{
+			hexaus.installHexaus();
+		}
+	}
 	
-	
+	public void openRanking(View v) {
 
+		Hexaus hexaus = new Hexaus(this);
+
+		if(hexaus.checkInstall()){
+			ComponentName compName = new ComponentName("com.hexaus.wallet","com.hexaus.wallet.RankingActivity");
+			Intent intent = new Intent(Intent.ACTION_MAIN);
+			intent.addCategory(Intent.CATEGORY_LAUNCHER);
+			intent.setComponent(compName);
+			
+			intent.putExtra("app_no", "sampleapp001");
+			startActivity(intent);
+		}else{
+			hexaus.installHexaus();
+		}
+
+	}
 	
 }
