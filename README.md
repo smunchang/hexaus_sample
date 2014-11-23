@@ -10,12 +10,11 @@ Pleae conatct to us (hexa@hexaus.com), then you will get developer code and appl
 Hexaus API provides one SDK which is Java Library and one APK which includes HEXAUS Application.
 Before you start, you need to follow these steps below.
 
-#####Add the SDK & APK files to your project
+#####Add the SDK files to your project
 - Copy the SDK(hexaus-sdk.jar) to <b>/libs</b> directory in your project.
-- Copy the APK(hexaus-wallet.apk) to <b>/assets</b> directory in your project.
 ```
 NOTE
-Whenever you build your application, please include the newest hexaus SDK and APK.
+Whenever you build your application, please include the newest hexaus SDK.
 ```
 
 #####Add Permission
@@ -25,6 +24,17 @@ Add lines of codes below into the <b>AndroidManifest.xml</b> file of your projec
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="com.android.vending.BILLING" />
+```
+```
+<activity
+	android:name="com.hexaus.sdk.GooglePurchaseActivity"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        <intent-filter>
+            <action android:name="android.intent.action.SEND" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+</activity>
 ```
 
 ####Import Class
