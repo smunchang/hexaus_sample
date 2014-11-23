@@ -92,7 +92,8 @@ public void purchaseItem(View v) {
 		intent.setComponent(compName);
 		
 		intent.putExtra("app_no", "sampleapp001");
-		intent.putExtra("item_no", "item-000-001");  //unique transaction id is recommended
+		//item_no should be same with the product in google in-app-billing 
+		intent.putExtra("item_no", "item-000-001");  
 		intent.putExtra("item_nm", "Excellent Weapon");
 		intent.putExtra("amount", "50000");
 		startActivityForResult(intent, 0);
