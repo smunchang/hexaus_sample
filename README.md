@@ -12,7 +12,7 @@ Before you start, you need to follow these steps below.
 
 #####Add the SDK files to your project
 - Copy the SDK(hexaus-sdk.jar) to <b>/libs</b> directory in your project.
-- Copy the APK(com.hexaus.play.apk) to <b>/assets</b> directory in your project.
+- Copy the APK(com.hexaus.hexa.apk) to <b>/assets</b> directory in your project.
 ```
 NOTE
 Whenever you build your application, please include the newest hexaus SDK & APK.
@@ -58,7 +58,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	Hexaus hexaus = new Hexaus(this);
 
 	if(hexaus.checkInstall()){
-		ComponentName compName = new ComponentName("com.hexaus.play","com.hexaus.play.InitActivity");
+		ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.InitActivity");
 		Intent intent = new Intent(Intent.ACTION_MAIN);
 		intent.addCategory(Intent.CATEGORY_LAUNCHER);
 		intent.setComponent(compName);
@@ -87,7 +87,7 @@ public void purchaseItem(View v) {
 	Hexaus hexaus = new Hexaus(this);
 
 	if(hexaus.checkInstall()){
-		ComponentName compName = new ComponentName("com.hexaus.play","com.hexaus.play.PurchaseActivity");
+		ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.PurchaseActivity");
 		Intent intent = new Intent(Intent.ACTION_MAIN);
 		intent.addCategory(Intent.CATEGORY_LAUNCHER);
 		intent.setComponent(compName);
@@ -133,7 +133,7 @@ message -> This is a really nice game~~~~~!!!!!\nEnjoy!!!nEnjoy!!!nEnjoy!!!
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.play","com.hexaus.play.FriendsActivity");
+			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.FriendsActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -171,7 +171,7 @@ message -> This is a really nice game
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.play","com.hexaus.play.ContactsActivity");
+			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.ContactsActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -236,7 +236,7 @@ application code -> sampleapp001
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.play","com.hexaus.play.RankingActivity");
+			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.RankingActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);

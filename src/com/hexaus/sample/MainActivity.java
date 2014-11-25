@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.app","com.hexaus.app.InitActivity");
+			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.InitActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.app","com.hexaus.app.PurchaseActivity");
+			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.PurchaseActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.app","com.hexaus.app.FriendsActivity");
+			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.FriendsActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.app","com.hexaus.app.ContactsActivity");
+			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.ContactsActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -139,7 +139,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.app","com.hexaus.app.RankingActivity");
+			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.RankingActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
