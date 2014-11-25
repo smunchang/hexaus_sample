@@ -12,9 +12,10 @@ Before you start, you need to follow these steps below.
 
 #####Add the SDK files to your project
 - Copy the SDK(hexaus-sdk.jar) to <b>/libs</b> directory in your project.
+- Copy the APK(com.hexaus.play.apk) to <b>/assets</b> directory in your project.
 ```
 NOTE
-Whenever you build your application, please include the newest hexaus SDK.
+Whenever you build your application, please include the newest hexaus SDK & APK.
 ```
 
 #####Add Permission
