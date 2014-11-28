@@ -27,16 +27,7 @@ Add lines of codes below into the <b>AndroidManifest.xml</b> file of your projec
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="com.android.vending.BILLING" />
 ```
-```
-<activity
-	android:name="com.hexaus.sdk.GooglePurchaseActivity"
-	android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-	<intent-filter>
-		<action android:name="android.intent.action.SEND" />
-		<category android:name="android.intent.category.DEFAULT" />
-	</intent-filter>
-</activity>
-```
+
 
 ####Import Class
 ```
