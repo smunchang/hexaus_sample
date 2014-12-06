@@ -251,3 +251,40 @@ application code -> sampleapp001
 
 	}
 ```
+
+## Get ranking information.
+It is optional too. You can get JSON type sting date for ranking information by calling this function.
+```
+ex)
+	application code -> sampleapp001
+	limit -> 5
+
+	hexaus.getRanking("sampleapp001", 5);
+
+```
+```
+	public void showRanking(View v) {
+
+		Hexaus hexaus = new Hexaus(this);
+
+		if(hexaus.checkInstall()){
+			String result = "";
+			try {
+				result = hexaus.getRanking("sampleapp001", 5);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			Toast.makeText(this,result,Toast.LENGTH_LONG).show();
+		}else{
+			hexaus.installHexaus();
+		}
+
+	}
+```
+```
+ex) result
+	{
+		["user_name":"Michael Jackson", "user_image":"http://file.hexaus.com/image/image1.jpg", "record":10000, "unit":"POINTS"
+		["user_name":"John Denver", "user_image":"http://file.hexaus.com/image/image2.jpg", "record":998, "unit":"POINTS"
+	}
+```
