@@ -287,4 +287,5 @@ ex) result
 		["user_name":"Michael Jackson", "user_image":"http://file.hexaus.com/image/image1.jpg", "record":10000, "unit":"POINTS"
 		["user_name":"John Denver", "user_image":"http://file.hexaus.com/image/image2.jpg", "record":998, "unit":"POINTS"
 	}
+		...
 ```
