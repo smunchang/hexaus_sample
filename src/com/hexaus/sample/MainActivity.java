@@ -1,5 +1,9 @@
 package com.hexaus.sample;
 
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
+
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -23,7 +27,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.InitActivity");
+			ComponentName compName = new ComponentName("com.hxplay.app","com.hxplay.app.InitActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -42,7 +46,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.PurchaseActivity");
+			ComponentName compName = new ComponentName("com.hxplay.app","com.hxplay.app.PurchaseActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -63,7 +67,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.FriendsActivity");
+			ComponentName compName = new ComponentName("com.hxplay.app","com.hxplay.app.FriendsActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -82,7 +86,7 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.ContactsActivity");
+			ComponentName compName = new ComponentName("com.hxplay.app","com.hxplay.app.ContactsActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
@@ -139,13 +143,31 @@ public class MainActivity extends Activity {
 		Hexaus hexaus = new Hexaus(this);
 
 		if(hexaus.checkInstall()){
-			ComponentName compName = new ComponentName("com.hexaus.hexa","com.hexaus.hexa.RankingActivity");
+			ComponentName compName = new ComponentName("com.hxplay.app","com.hxplay.app.RankingActivity");
 			Intent intent = new Intent(Intent.ACTION_MAIN);
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
 			
 			intent.putExtra("app_no", "sampleapp001");
 			startActivity(intent);
+		}else{
+			hexaus.installHexaus();
+		}
+
+	}
+	
+	public void showRanking(View v) {
+
+		Hexaus hexaus = new Hexaus(this);
+
+		if(hexaus.checkInstall()){
+			String result = "";
+			try {
+				result = hexaus.getRanking("sampleapp001", 5);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			Toast.makeText(this,result,Toast.LENGTH_LONG).show();
 		}else{
 			hexaus.installHexaus();
 		}

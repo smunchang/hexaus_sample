@@ -92,6 +92,11 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:onClick="openRanking"
+	        android:text="Open Ranking" />
+	    <Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="showRanking"
 	        android:text="Show Ranking" />
 	</LinearLayout>
 </ScrollView>
