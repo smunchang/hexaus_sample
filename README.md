@@ -18,25 +18,13 @@ NOTE
 Whenever you build your application, please include the newest hexaus SDK & APK.
 ```
 
-#####Add Permission & Add Activity
+#####Add Permission
 Add lines of codes below into the <b>AndroidManifest.xml</b> file of your project 
 
 ```
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-<uses-permission android:name="com.android.vending.BILLING" />
-
-
-
-<activity
-    android:name="com.hexaus.sdk.GooglePurchaseActivity"
-    android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-    <intent-filter>
-        <action android:name="android.intent.action.SEND" />
-        <category android:name="android.intent.category.DEFAULT" />
-    </intent-filter>
-</activity>
 ```
 
 
@@ -95,7 +83,6 @@ public void purchaseItem(View v) {
 		intent.setComponent(compName);
 		
 		intent.putExtra("app_no", "sampleapp001");
-		//item_no should be same with the product in google in-app-billing 
 		intent.putExtra("item_no", "item-000-001");  
 		intent.putExtra("item_nm", "Excellent Weapon");
 		intent.putExtra("amount", "50000");
