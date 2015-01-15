@@ -1,8 +1,8 @@
 HEXAUS API provides four "use cases" which are <b>initializing, purchasing item, sending message to friend, sending SMS message and showing rank information</b> in your applicaton. Before you integrate this API, please download and execute this sample application. It is better to understand how HEXAUS API interacts within your application.
 
 ## Pre-requisite
-You need to register as a developer to HEXAUS.<br>
-Pleae conatct to us (hexa@hexaus.com), then you will get developer code and application code.
+You need to register as a developer and submit APK information & purchasing-item List.<br>
+Pleae conatct to us (hexa@hexaus.com) for more detail.
 
 
 
