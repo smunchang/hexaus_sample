@@ -24,6 +24,7 @@ Add lines of codes below into the <b>AndroidManifest.xml</b> file of your projec
 ```
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 
