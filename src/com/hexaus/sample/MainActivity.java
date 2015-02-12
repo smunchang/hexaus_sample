@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 			intent.setComponent(compName);
 			
 			intent.putExtra("app_no", "sampleapp001");
-			startActivity(intent);
+			startActivityForResult(intent, 0);
 		}else{
 			hexaus.installHexaus();
 		}
@@ -106,11 +106,20 @@ public class MainActivity extends Activity {
 		
 
 		if(resultCode == Activity.RESULT_OK){
+			if(data.getStringExtra("activity").equals("initialize")){
+				Toast.makeText(this,"Initialize OK",Toast.LENGTH_LONG).show();
+				
+				Log.d("sample", data.getStringExtra("device_no"));
+				Log.d("sample", data.getStringExtra("device_nm"));
+				Log.d("sample", data.getStringExtra("device_img"));
+				
+			}
 			if(data.getStringExtra("activity").equals("purchase")){
 				Toast.makeText(this,"Purchase OK",Toast.LENGTH_LONG).show();
 				
-				Log.d("sample", data.getStringExtra("purchase_no"));
 				Log.d("sample", data.getStringExtra("item_no"));
+				Log.d("sample", data.getStringExtra("purchase_no"));
+				Log.d("sample", data.getStringExtra("purchase_cd"));
 				
 			}
 			if(data.getStringExtra("activity").equals("friends")){
