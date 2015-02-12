@@ -55,13 +55,29 @@ protected void onCreate(Bundle savedInstanceState) {
 		intent.setComponent(compName);
 		
 		intent.putExtra("app_no", "sampleapp001");
-		startActivity(intent);
+		startActivityForResult(intent, 0);
 	}else{
 		hexaus.installHexaus();
 	}
 }
 ```
-
+```
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		if(resultCode == Activity.RESULT_OK){
+			if(data.getStringExtra("activity").equals("initialize")){
+				Toast.makeText(this,"Initialize OK",Toast.LENGTH_LONG).show();
+				
+				Log.d("sample", data.getStringExtra("device_no"));  //hexaus device no	 (unique id)
+				Log.d("sample", data.getStringExtra("device_nm"));	//hexaus device name (unique but user can change)
+				Log.d("sample", data.getStringExtra("device_img"));	//profile image url
+				
+			}
+		}
+	}
+```
 ## Purchase Item
 If a user has enough balance to purchase item, "purchase dialog" will be shown. Or if balance is insufficent, "topup dialog" will be shown.
 
@@ -104,10 +120,13 @@ public void purchaseItem(View v) {
 				Toast.makeText(this,"Purchase OK",Toast.LENGTH_LONG).show();
 				
 				Log.d("sample", data.getStringExtra("purchase_no"));  //hexaus purchae ID
+				Log.d("sample", data.getStringExtra("purchase_cd"));  //encoded with sha256(app_no + item_no + purchase_no)
 				Log.d("sample", data.getStringExtra("item_no"));
 			}
 		}
 	}
+	
+	
 ```
 
 ## Send Message to Friend
