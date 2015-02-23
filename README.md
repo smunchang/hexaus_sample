@@ -79,14 +79,13 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 }
 ```
 ## Purchase Item
-If a user has enough balance to purchase item, "purchase dialog" will be shown. Or if balance is insufficent, "topup dialog" will be shown.
+If a user has enough balance to purchase item, "purchase dialog" will be shown. Or if balance is insufficent, "topup dialog" will be shown.<br>
+* Item should be registered to HEXAUS system.
 
 ```
 ex)
 application code -> sampleapp001
 item code -> item-000-001
-item name -> Excellent Weapon
-amount -> 50000
 ```
 ```
 public void purchaseItem(View v) {
@@ -101,8 +100,6 @@ public void purchaseItem(View v) {
 		
 		intent.putExtra("app_no", "sampleapp001");
 		intent.putExtra("item_no", "item-000-001");  
-		intent.putExtra("item_nm", "Excellent Weapon");
-		intent.putExtra("amount", "50000");
 		startActivityForResult(intent, 0);
 	}else{
 		hexaus.installHexaus();
