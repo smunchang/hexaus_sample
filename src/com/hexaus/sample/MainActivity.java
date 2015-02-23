@@ -53,8 +53,6 @@ public class MainActivity extends Activity {
 			
 			intent.putExtra("app_no", "sampleapp001");
 			intent.putExtra("item_no", "item-000-001");
-			intent.putExtra("item_nm", "Excellent Weapon");
-			intent.putExtra("amount", "50000");
 			startActivityForResult(intent, 0);
 		}else{
 			hexaus.installHexaus();
