@@ -35,7 +35,7 @@ import com.hexaus.sdk.Hexaus;
 ```
 
 ## Initializing
-It is optional, but we recommend to implement this when MainActivity starts (in the onCreate method) because it collect user's information. By this information we will analyze and make a report for you.
+We recommend to implement this when MainActivity starts (in the onCreate method) because it collect user's information. By this information we will analyze and make a report for you.
 ```
 ex)
 application code -> sampleapp001
