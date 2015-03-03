@@ -51,8 +51,8 @@ public class MainActivity extends Activity {
 			intent.addCategory(Intent.CATEGORY_LAUNCHER);
 			intent.setComponent(compName);
 			
-			intent.putExtra("app_no", "sampleapp001");
-			intent.putExtra("item_no", "item-000-001");
+			intent.putExtra("app_no", "AP2015027831");
+			intent.putExtra("item_no", "1");
 			startActivityForResult(intent, 0);
 		}else{
 			hexaus.installHexaus();
